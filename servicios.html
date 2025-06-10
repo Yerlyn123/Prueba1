@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos | Starke Fitness</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --brand-yellow: #ffc107;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: var(--brand-yellow) !important;
+  }
+
+  .glass-navbar {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-link-animated {
+    color: var(--brand-yellow);
+    position: relative;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-animated::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--brand-yellow);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link-animated:hover {
+    color: #fff;
+  }
+
+  .nav-link-animated:hover::after {
+    width: 100%;
+  }
+
+  .btn-warning {
+    background-color: var(--brand-yellow);
+    color: white;
+    border-radius: 20px;
+  }
+
+  header {
+    margin-top: 56px;
+  }
+
+  .producto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center; /* Centra imágenes y texto */
+  }
+
+  .producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .producto img {
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px; /* Separación entre imagen y texto */
+    max-width: 100%; /* Evita que la imagen se desborde */
+  }
+
+  .producto-lista {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top glass-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center text-warning fw-bold fs-4" href="inicio.html">
+      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+      Starke Fitness
+    </a>
+    <button class="navbar-toggler border-0 text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link nav-link-animated" href="inicio.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-animated" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-animated" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-animated" href="contacto.html">Contacto</a></li>
+        <li class="nav-item ms-2">
+          <a href="registro.html" class="btn btn-warning btn-sm fw-bold px-3 shadow-sm">Registro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sección de Productos -->
+<section class="container my-5" style="padding: 80px 0;">
+  <h2 class="text-center mb-4" style="color: #ffc107;">Nuestros Productos</h2>
+  <p class="text-center">Haz clic en cada categoría para ver los productos disponibles en Strake Fitness.</p>
+
+  <!-- Botones de Categoría -->
+  <div class="row text-center g-4">
+    <div class="col-md-3">
+      <button class="btn w-100 py-3 bg-dark text-white border-0" onclick="mostrar('botellas')">🧴 Botellas</button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn w-100 py-3 bg-dark text-white border-0" onclick="mostrar('proteinas')">💪 Proteínas</button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn w-100 py-3 bg-dark text-white border-0" onclick="mostrar('creatinas')">⚡ Creatinas</button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn w-100 py-3 bg-dark text-white border-0" onclick="mostrar('barras')">🥜 Barras Saludables</button>
+    </div>
+  </div>
+
+  <!-- Contenedores de Productos -->
+  <div id="botellas" class="producto-lista mt-5">
+    <h4 class="text-warning mb-4">🧴 Botellas Deportivas</h4>
+    <div class="row">
+      <div class="col-md-4"><div class="producto"><img src="img/ip1.jpg"><h5>₡4,500</h5><p>Botella metálica 750ml</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ip2.avif"><h5>₡2,800</h5><p>Botella plástica deportiva 1L</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ip3.jpg"><h5>₡6,500</h5><p>Shaker con mezclador 1L</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ip4.jpg"><h5>₡3,200</h5><p>Botella antigoteo 600ml</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ip5.jpg"><h5>₡5,100</h5><p>Botella con filtro infusor</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ip6.jpg"><h5>₡4,900</h5><p>Botella deportiva color mate</p></div></div>
+    </div>
+  </div>
+
+  <div id="proteinas" class="producto-lista mt-5">
+    <h4 class="text-warning mb-4">💪 Proteínas</h4>
+    <div class="row">
+       <div class="col-md-4"><div class="producto"><img src="img/ic1.jpg"><h5>₡19,900</h5><p>Proteína sabor vainilla 1kg</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ic2.jpg"><h5>₡24,000</h5><p>Proteína chocolate sin azúcar</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ic3.jpg"><h5>₡21,500</h5><p>Proteína vegana fresa</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ic4.jpg"><h5>₡26,000</h5><p>Whey protein cookies & cream</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ic5.jpg"><h5>₡22,300</h5><p>Proteína sabor banana 900g</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ic6.jpg"><h5>₡23,000</h5><p>Proteína baja en lactosa</p></div></div>
+    </div>
+  </div>
+
+  <div id="creatinas" class="producto-lista mt-5">
+    <h4 class="text-warning mb-4">⚡ Creatinas</h4>
+    <div class="row">
+       <div class="col-md-4"><div class="producto"><img src="img/ir1.avif"><h5>₡17,500</h5><p>Creatina monohidratada 300g</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ir2.avif"><h5>₡21,000</h5><p>Creatina sabor limón</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ir3.avif"><h5>₡19,800</h5><p>Creatina con BCAA</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ir4.webp"><h5>₡20,900</h5><p>Creatina en cápsulas</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ir5.jpg"><h5>₡22,700</h5><p>Creatina vegana 250g</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ir6.webp"><h5>₡18,900</h5><p>Creatina sabor frambuesa</p></div></div>
+  </div>
+   </div>
+
+  <div id="barras" class="producto-lista mt-5">
+    <h4 class="text-warning mb-4">🥜 Barras Saludables</h4>
+    <div class="row">
+    <div class="col-md-4"><div class="producto"><img src="img/ib1.jpg"><h5>₡1,200</h5><p>Barra energética de maní</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ib2.webp"><h5>₡1,500</h5><p>Barra de proteína 20g</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ib3.jpg"><h5>₡1,800</h5><p>Barra sin azúcar sabor cacao</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ib4.jpg"><h5>₡1,350</h5><p>Barra de almendra y miel</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ib5.webp"><h5>₡1,600</h5><p>Barra de avena y chía</p></div></div>
+    <div class="col-md-4"><div class="producto"><img src="img/ib6.jpg"><h5>₡1,450</h5><p>Barra tropical con frutas secas</p></div></div>
+    </div>
+  </div>
+</section>
+
+ <footer class="bg-dark text-center text-white mt-5 py-4">
+  <div class="container">
+    <p class="mb-2" style="color: #ffc107; font-size: 1.2rem;"><strong>Strake Fitness</strong></p>
+
+    <!-- Contacto funcional -->
+    <p class="mb-2">
+      <a href="tel:+50688884323" class="text-warning text-decoration-none me-3">
+        📞 +506 8888-4323
+      </a>
+      |
+      <a href="mailto:info@strakefitness.com" class="text-warning text-decoration-none mx-3">
+        📧 info@strakefitness.com
+      </a>
+      |
+      <br>
+      <a href="https://www.google.com/maps?q=Cartago,+Costa+Rica" target="_blank" class="text-warning text-decoration-none ms-3">
+        📍 Cartago, Costa Rica
+      </a>
+    </p>
+
+    <!-- Enlaces -->
+    <div class="mb-2">
+      <a href="inicio.html" class="text-white mx-2">Inicio</a> |
+      <a href="nosotros.html" class="text-white mx-2">Nosotros</a> |
+      <a href="servicios.html" class="text-white mx-2">Servicios</a> |
+      <a href="contacto.html" class="text-white mx-2">Contacto</a> |
+      <a href="registro.html" class="text-white mx-2">Registro</a>
+    </div>
+
+    <!-- Derechos -->
+    <p class="mb-0">&copy; 2025 Starke Fitness. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+ <script>
+  function mostrar(categoria) {
+    const secciones = document.querySelectorAll('.producto-lista');
+    secciones.forEach(seccion => {
+      seccion.style.display = 'none';
+    });
+
+    const activa = document.getElementById(categoria);
+    if (activa) {
+      activa.style.display = 'block';
+    }
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

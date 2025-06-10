@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio | Starke Fitness</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+  :root {
+    --brand-yellow: #ffc107;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: var(--brand-yellow) !important;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  header { margin-top: 56px; }
+
+  .glass-navbar {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-link-animated {
+    color: var(--brand-yellow);
+    position: relative;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-animated::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--brand-yellow);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link-animated:hover {
+    color: #fff;
+  }
+
+  .nav-link-animated:hover::after {
+    width: 100%;
+  }
+
+  .btn-warning {
+    background-color: var(--brand-yellow);
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .btn-warning:hover {
+    background-color: #e0a800;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-link-animated {
+      margin-left: 0;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  /* Sección general */
+  .section-fun {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+  }
+
+  .section-fun h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  .section-fun p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.6;
+  }
+
+  /* Banner */
+  .promo-banner {
+    background: linear-gradient(to right, #fff8e1, #ffe082);
+    border-radius: 1rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 50px 0;
+    transition: transform 0.3s ease;
+  }
+
+  .promo-banner:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 576px) {
+    .promo-banner h2 {
+      font-size: 1.8rem;
+    }
+
+    .promo-banner p {
+      font-size: 1rem;
+    }
+  }
+
+  /* Tarjetas */
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .testimonial {
+    font-style: italic;
+  }
+
+    .hover-efecto {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .hover-efecto:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+  }
+
+  </style>
+</head>
+<body >
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center text-warning fw-bold fs-4" href="inicio.html">
+        <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+        Starke Fitness
+      </a>
+      <button class="navbar-toggler border-0 text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="nav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="registro.html" class="btn btn-warning btn-sm fw-bold px-3 shadow-sm">Registro</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel Principal -->
+  <header>
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/im1.jpg" class="d-block w-100" alt="Gimnasio">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3 animate__animated animate__fadeInUp">
+            <h2>¡Bienvenidos a <span style='color: var(--brand-yellow)'>Starke Fitness</span>!</h2>
+            <p>Tu transformación empieza hoy.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/im2.jpg" class="d-block w-100" alt="Entrenamiento">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3 animate__animated animate__fadeInUp">
+            <h2>Entrenamiento <span style='color: var(--brand-yellow)'>Personalizado</span></h2>
+            <p>Planes adaptados a tu objetivo.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/im3.avif" class="d-block w-100" alt="Pesas">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3 animate__animated animate__fadeInUp">
+            <h2>Área de <span style='color: var(--brand-yellow)'>Pesas Modernas</span></h2>
+            <p>Equipo de última generación.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </header>
+
+<!-- Banner Promocional -->
+<section class="promo-banner text-center py-5 px-3">
+  <div class="container animate__animated animate__fadeInDown">
+    <h2 class="mb-3" style="color: var(--brand-yellow); font-weight: 800; font-size: 2.5rem;">
+      ¡Promoción de Verano!
+    </h2>
+    <p class="text-dark fs-5 mb-4">
+      Inscríbete hoy y obtén un <strong>50% de descuento</strong> el primer mes.
+    </p>
+    <a href="registro.html" class="btn btn-warning btn-lg shadow-sm px-4 py-2 fw-bold">
+      ¡Aprovecha!
+    </a>
+  </div>
+</section>
+
+<!-- Sección Destacados Mejorada -->
+<section class="section-fun text-center py-5 bg-light">
+  <div class="container">
+    <!-- Título de la sección ajustado para hacerlo más profesional -->
+    <h2 class="mb-4 text-dark fw-bold">¿Por qué elegir <span style="color: var(--brand-yellow)">Starke Fitness</span>?</h2>
+    
+    <!-- Descripción corta debajo del título -->
+    <p class="mb-5 text-muted">Te ofrecemos una experiencia única con entrenadores expertos, equipos de última generación y una comunidad activa que te apoyará en cada paso.</p>
+    
+    <div class="row">
+      
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 h-100 card-hover transition">
+          <img src="img/im4.jpg" class="card-img-top" alt="Entrenador certificado">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">🏋️‍♂️ Expertos Certificados</h5>
+            <p class="card-text">Entrenadores con certificaciones internacionales y años de experiencia para ayudarte a alcanzar tus objetivos de forma segura.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 h-100 card-hover transition">
+          <img src="img/im5.jpg" class="card-img-top" alt="Máquinas modernas">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">💪 Equipos de Última Generación</h5>
+            <p class="card-text">Disfrutá de la mejor tecnología en cada máquina para optimizar tu entrenamiento y resultados.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 h-100 card-hover transition">
+          <img src="img/im6.jpg" class="card-img-top" alt="Comunidad fitness">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">🤝 Comunidad Motivadora</h5>
+            <p class="card-text">Un ambiente positivo donde cada miembro se motiva mutuamente para alcanzar nuevas metas juntos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Botón final que invita a explorar más o unirse -->
+    <a href="registro.html" class="btn btn-warning btn-lg mt-4">Únete a nosotros</a>
+  </div>
+</section>
+
+<!-- Sección Productos-->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center text-warning fw-bold mb-5" style="font-size: 2.5rem;">🔥 Nuestros Productos Estrella 🔥</h2>
+
+    <div id="productosCarrusel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 text-white shadow-lg rounded-4 hover-efecto">
+                <img src="img/im10.jpg" class="card-img-top rounded-top-4" alt="Creatina Premium">
+                <div class="card-body text-center bg-dark rounded-bottom-4">
+                  <h5 class="card-title text-warning fw-bold">Creatina Premium</h5>
+                  <p class="card-text text-white">Potencia tus entrenamientos y mejora tu rendimiento físico al máximo nivel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-dark text-white shadow-lg rounded-4 hover-efecto">
+                <img src="img/im11.webp" class="card-img-top rounded-top-4" alt="Proteína Whey">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-warning fw-bold">Proteína Whey</h5>
+                  <p class="card-text text-white">Ideal para ganar masa muscular y acelerar tu recuperación.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-dark text-white shadow-lg rounded-4 hover-efecto">
+                <img src="img/im12.webp" class="card-img-top rounded-top-4" alt="Barras Saludables">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-warning fw-bold">Barras Saludables</h5>
+                  <p class="card-text text-white">Snacks ricos en proteína y sabor, ideales para llevar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-dark text-white shadow-lg rounded-4 hover-efecto">
+                <img src="img/im13.jpg" class="card-img-top rounded-top-4" alt="Botellas Deportivas">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-warning fw-bold">Botellas Deportivas</h5>
+                  <p class="card-text text-white">Diseños resistentes, con estilo, perfectos para cada entrenamiento.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-dark text-white shadow-lg rounded-4 hover-efecto">
+                <img src="img/im14.jpg" class="card-img-top rounded-top-4" alt="Proteína Iso">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-warning fw-bold">Proteína Iso</h5>
+                  <p class="card-text text-white">Absorción rápida, perfecta para quienes buscan definición muscular.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-dark text-white shadow-lg rounded-4 hover-efecto">
+                <img src="img/im15.avif" class="card-img-top rounded-top-4" alt="Creatina Premium 2">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-warning fw-bold">Creatina Pro</h5>
+                  <p class="card-text text-white">Rinde más, entrena fuerte y alcanza tus metas más rápido.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#productosCarrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" style="background-color: #ffc107; border-radius: 50%;"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#productosCarrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" style="background-color: #ffc107; border-radius: 50%;"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+   <footer class="bg-dark text-center text-white mt-5 py-4">
+  <div class="container">
+    <p class="mb-2" style="color: #ffc107; font-size: 1.2rem;"><strong>Strake Fitness</strong></p>
+
+    <!-- Contacto funcional -->
+    <p class="mb-2">
+      <a href="tel:+50688884323" class="text-warning text-decoration-none me-3">
+        📞 +506 8888-4323
+      </a>
+      |
+      <a href="mailto:info@strakefitness.com" class="text-warning text-decoration-none mx-3">
+        📧 info@strakefitness.com
+      </a>
+      |
+      <br>
+      <a href="https://www.google.com/maps?q=Cartago,+Costa+Rica" target="_blank" class="text-warning text-decoration-none ms-3">
+        📍 Cartago, Costa Rica
+      </a>
+    </p>
+
+    <!-- Enlaces -->
+    <div class="mb-2">
+      <a href="inicio.html" class="text-white mx-2">Inicio</a> |
+      <a href="nosotros.html" class="text-white mx-2">Nosotros</a> |
+      <a href="servicios.html" class="text-white mx-2">Servicios</a> |
+      <a href="contacto.html" class="text-white mx-2">Contacto</a> |
+      <a href="registro.html" class="text-white mx-2">Registro</a>
+    </div>
+
+    <!-- Derechos -->
+    <p class="mb-0">&copy; 2025 Starke Fitness. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

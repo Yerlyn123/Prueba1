@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosotros | Starke Fitness</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --brand-yellow: #ffc107;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.7rem;
+      color: var(--brand-yellow) !important;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .glass-navbar {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-link-animated {
+      color: var(--brand-yellow);
+      position: relative;
+      font-weight: 500;
+      margin-left: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link-animated::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0%;
+      height: 2px;
+      background-color: var(--brand-yellow);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link-animated:hover {
+      color: #fff;
+    }
+
+    .nav-link-animated:hover::after {
+      width: 100%;
+    }
+
+    .btn-warning {
+      background-color: var(--brand-yellow);
+      color: white;
+      border-radius: 20px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-warning:hover {
+      background-color: #e0a800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-link-animated {
+        margin-left: 0;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    header {
+      margin-top: 56px;
+    }
+
+    .vision-card,
+    .mission-card {
+      background: #2b2b2b;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .vision-card:hover,
+    .mission-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    }
+
+    .interactive-text {
+      position: relative;
+      display: inline-block;
+      color: var(--brand-yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .interactive-text::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--brand-yellow);
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+
+    .interactive-text:hover::after {
+      width: 100%;
+    }
+
+    .interactive-text:hover {
+      transform: scale(1.05);
+      color: #ffd700;
+    }
+
+    .cta-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #ddd;
+      margin-bottom: 15px;
+      animation: fadeIn 1s forwards;
+    }
+
+    .custom-btn {
+      font-size: 1rem;
+      padding: 12px 26px;
+      border-radius: 25px;
+      background-color: var(--brand-yellow);
+      color: #000;
+      border: none;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .custom-btn:hover {
+      transform: scale(1.1);
+      background-color: #f1c232;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-banner {
+      background: url('img/nosotros-banner.jpg') center/cover no-repeat;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .about-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .valor-card {
+      background: #1e1e1e;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .valor-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(255, 255, 0, 0.3);
+    }
+
+    .valor-card i {
+      transition: transform 0.3s ease;
+    }
+
+    .valor-card:hover i {
+      transform: rotate(-5deg) scale(1.1);
+    }
+</style>
+    
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center text-warning fw-bold fs-4" href="inicio.html">
+        <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+        Starke Fitness
+      </a>
+      <button class="navbar-toggler border-0 text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="nav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-animated" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="registro.html" class="btn btn-warning btn-sm fw-bold px-3 shadow-sm">Registro</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- Carrusel Principal -->
+<header>
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/ig0.jpg" class="d-block w-100" alt="Gimnasio">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Sección Nosotros -->
+<section class="about-section text-center py-5" style="background-color: #e1e1e1; color: #333;">
+  <div class="container">
+    <h2 class="mb-4 fw-bold" style="color: var(--brand-yellow); font-family: 'Poppins', sans-serif; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px;">
+      ¿Quiénes somos?
+    </h2>
+    <p class="lead mb-4" style="font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto; font-family: 'Lora', serif; font-weight: 400;">
+      En <strong>Starke Fitness</strong>, nos dedicamos a transformar tu vida, combinando entrenamiento físico con bienestar mental. Creamos un espacio único y estimulante donde te apoyamos en cada paso hacia una versión más saludable y equilibrada de ti mismo.
+    </p>
+    <p class="mb-4" style="font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto; font-family: 'Lora', serif; font-weight: 400;">
+      Nuestro equipo de entrenadores altamente capacitados y nuestras instalaciones de vanguardia están aquí para ofrecerte entrenamientos personalizados, asesoría nutricional y un acompañamiento continuo. Nos apasiona que disfrutes del proceso mientras alcanzas tus metas.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto; font-family: 'Lora', serif; font-weight: 400;">
+      Ya sea que tu objetivo sea mejorar tu salud, perder peso o ganar masa muscular, en <strong>Starke Fitness</strong> tenemos el plan perfecto para ti. ¡Supera tus límites y transforma tu cuerpo con nosotros!
+    </p>
+  </div>
+</section>
+
+
+<!-- Visión y Misión -->
+<section class="vision-mission py-5">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      
+      <!-- Tarjeta Visión -->
+      <div class="col-md-6 d-flex align-items-stretch">
+        <div class="card shadow-lg border-0 rounded vision-card text-white h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="text-center mb-3" style="color: var(--brand-yellow); font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 600;">Visión</h3>
+              <p style="font-size: 1.05rem; color: #eaeaea; line-height: 1.7;">
+                Ser el gimnasio líder en Costa Rica, reconocido por ofrecer servicios de calidad, entrenadores expertos y un ambiente saludable, motivador y accesible para todos. Buscamos inspirar un estilo de vida activo y saludable, promoviendo el bienestar físico y mental de cada miembro.
+              </p>
+            </div>
+            <div class="text-center mt-4">
+              <span class="interactive-text">Descubre cómo lo lograremos contigo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Misión -->
+      <div class="col-md-6 d-flex align-items-stretch">
+        <div class="card shadow-lg border-0 rounded mission-card text-white h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="text-center mb-3" style="color: var(--brand-yellow); font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 600;">Misión</h3>
+              <p style="font-size: 1.05rem; color: #eaeaea; line-height: 1.7;">
+                Brindar a nuestros miembros una experiencia integral de salud y bienestar mediante entrenamientos personalizados, asesoría nutricional y un equipo de profesionales dedicados. Nos esforzamos por mejorar la calidad de vida de cada persona que forme parte de Starke Fitness.
+              </p>
+            </div>
+            <div class="text-center mt-4">
+              <span class="interactive-text">Conócela y sé parte del cambio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Llamado a la acción -->
+    <div class="text-center mt-5">
+      <p class="cta-text" style="color: #000;">Tu mejor versión comienza con una decisión. ¿Estás listo?</p>
+      <a href="registro.html" class="btn btn-primary custom-btn">¡Únete a Starke Fitness!</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Nuestros Valores Mejorada -->
+<section class="valores-section py-5" style="background-color: #121212;">
+  <div class="container">
+    <h5 class="text-center mb-5 display-5 fw-bold" style="color: var(--brand-yellow); font-family: 'Poppins', sans-serif;">Nuestros Valores</h5>
+    <div class="row justify-content-center g-4">
+      
+      <!-- Tarjeta 1 -->
+      <div class="col-md-4">
+        <div class="valor-card text-center p-4 rounded-4 shadow-lg h-100">
+          <i class="fas fa-dumbbell fa-3x mb-3" style="color: var(--brand-yellow);"></i>
+          <h4 class="fw-bold mb-2" style="color: #ffffff;">Disciplina</h4>
+          <p class="text-light mb-0">Fomentamos la constancia como base para alcanzar tus objetivos. La disciplina es el corazón de cada progreso real.</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="col-md-4">
+        <div class="valor-card text-center p-4 rounded-4 shadow-lg h-100">
+          <i class="fas fa-handshake fa-3x mb-3" style="color: var(--brand-yellow);"></i>
+          <h4 class="fw-bold mb-2" style="color: #ffffff;">Compromiso</h4>
+          <p class="text-light mb-0">Nuestro compromiso es contigo. Te acompañamos con dedicación para que llegues más lejos de lo que imaginas.</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="col-md-4">
+        <div class="valor-card text-center p-4 rounded-4 shadow-lg h-100">
+          <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--brand-yellow);"></i>
+          <h4 class="fw-bold mb-2" style="color: #ffffff;">Superación</h4>
+          <p class="text-light mb-0">Creemos en el poder de superarte cada día. En Starke Fitness te impulsamos a romper tus límites.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Nuestro Equipo -->
+<section class="team-section py-5">
+  <div class="container text-center">
+    <h3 class="mb-5 display-4 fw-bold" style="color: var(--brand-yellow); font-family: 'Poppins', sans-serif;">Nuestro Equipo</h3>
+    <div class="row g-4">
+      
+      <!-- Miembro 1 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card bg-dark text-white border-0 shadow-lg h-100 rounded-4 p-4">
+          <img src="img/ig5.jpg" alt="Entrenador 1" class="img-fluid rounded-circle mb-3 border border-4 border-warning" style="width: 150px; height: 150px; object-fit: cover; margin: 0 auto;">
+          <h4 class="mt-3">Juan Pérez</h4>
+          <p class="text-warning">Entrenador Personal</p>
+          <p>Experto en fuerza, acondicionamiento físico y nutrición deportiva. Ayuda a los miembros a alcanzar sus metas con planes de entrenamiento personalizados.</p>
+        </div>
+      </div>
+
+      <!-- Miembro 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card bg-dark text-white border-0 shadow-lg h-100 rounded-4 p-4">
+          <img src="img/ig6.jpg" alt="Entrenador 2" class="img-fluid rounded-circle mb-3 border border-4 border-warning" style="width: 150px; height: 150px; object-fit: cover; margin: 0 auto;">
+          <h4 class="mt-3">Marcos Rivera</h4>
+          <p class="text-warning">Entrenador de Cardio</p>
+          <p>Especialista en entrenamiento cardiovascular y pérdida de peso. Su enfoque es lograr resultados sostenibles a largo plazo.</p>
+        </div>
+      </div>
+
+      <!-- Miembro 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card bg-dark text-white border-0 shadow-lg h-100 rounded-4 p-4">
+          <img src="img/ig7.jpg" alt="Entrenador 3" class="img-fluid rounded-circle mb-3 border border-4 border-warning" style="width: 150px; height: 150px; object-fit: cover; margin: 0 auto;">
+          <h4 class="mt-3">Carlos García</h4>
+          <p class="text-warning">Nutricionista Deportivo</p>
+          <p>Asesoría nutricional para optimizar el rendimiento y mejorar la salud general de nuestros miembros. Crea planes alimenticios personalizados.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <footer class="bg-dark text-center text-white mt-5 py-4">
+  <div class="container">
+    <p class="mb-2" style="color: #ffc107; font-size: 1.2rem;"><strong>Strake Fitness</strong></p>
+
+    <!-- Contacto funcional -->
+    <p class="mb-2">
+      <a href="tel:+50688884323" class="text-warning text-decoration-none me-3">
+        📞 +506 8888-4323
+      </a>
+      |
+      <a href="mailto:info@strakefitness.com" class="text-warning text-decoration-none mx-3">
+        📧 info@strakefitness.com
+      </a>
+      |
+      <br>
+      <a href="https://www.google.com/maps?q=Cartago,+Costa+Rica" target="_blank" class="text-warning text-decoration-none ms-3">
+        📍 Cartago, Costa Rica
+      </a>
+    </p>
+
+    <!-- Enlaces -->
+    <div class="mb-2">
+      <a href="inicio.html" class="text-white mx-2">Inicio</a> |
+      <a href="nosotros.html" class="text-white mx-2">Nosotros</a> |
+      <a href="servicios.html" class="text-white mx-2">Servicios</a> |
+      <a href="contacto.html" class="text-white mx-2">Contacto</a> |
+      <a href="registro.html" class="text-white mx-2">Registro</a>
+    </div>
+
+    <!-- Derechos -->
+    <p class="mb-0">&copy; 2025 Starke Fitness. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
